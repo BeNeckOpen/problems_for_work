@@ -11,7 +11,6 @@ def file_pars():
         for letter in one_word:
             sum = ord(letter) - 64
         all_sum = i * sum + all_sum
-        print(all_sum)
         i = i + 1
     print(all_sum)
 
