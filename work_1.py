@@ -1,19 +1,16 @@
 def file_pars():
-    sum = 0
+    sum_local = 0
     all_sum = 0
-    i = 1
     f = open('names.txt', 'r')
     line = f.readline()
+    line = line[1:-1]
     word = line.split('","')
-    word[0] = word[0][1:]
-    word[len(word) - 1] = word[len(word) - 1][:-1]
     word.sort()
-    for one_word in word:
-        for letter in one_word:
-            sum = ord(letter) - 64 + sum
-        all_sum = i * sum + all_sum
-        sum = 0
-        i = i + 1
+    for i in range(len(word)):
+        for letter in word[i]:
+            sum_local += ord(letter) - ord('A') + 1
+        all_sum += i * sum_local
+        sum_local = 0
     print(all_sum)
 
 
